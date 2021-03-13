@@ -10,6 +10,7 @@
     "@types/node": "^12.20.5",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.2",
+    "axios": "^0.21.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
@@ -19,7 +20,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env jest-environment-jsdom-sixteen",
+    "coverage": "npm test --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -38,6 +40,19 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "ts-jest": "^26.5.3"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx,js,jsx}",
+      "!src/serviceWorker.ts",
+      "!src/index.tsx",
+      "!src/**/*.d.ts"
     ]
   }
 }
